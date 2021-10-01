@@ -8,14 +8,11 @@ public class HomePageTest extends BaseTest{
 
     @Test(priority = 1)
     public void firstTest(){
-//        HomePage homePage = new HomePage();
-//        homePage.clickSearchButton().sendKeysToSearchField("Пряжене");
-//        SoftAssert softAssert = new SoftAssert();
-//        softAssert.assertTrue(true);
-//        homePage.clickOnProduct(4);
-        homePage.clickOnProduct("Молоко питне пастеризоване 2,5% жиру, 0,500");
+        softAssert.assertTrue(homePage.checkSearchButton());
+        softAssert.assertTrue(homePage.checkLeftMenuButton());
+        homePage.clickSearchButton().sendKeysToSearchField("Пряжене");
+        homePage.clickOnProduct(1);
+        softAssert.assertAll();
         BasePage.clickBackButton();
     }
-
-
 }

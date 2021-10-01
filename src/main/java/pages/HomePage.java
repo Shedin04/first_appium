@@ -1,11 +1,9 @@
 package pages;
 
-import driver.DriverManager;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.touch.TapOptions;
 import io.appium.java_client.touch.offset.ElementOption;
-import org.openqa.selenium.Keys;
 
 import java.util.List;
 
@@ -24,6 +22,10 @@ public class HomePage extends BasePage{
     @AndroidFindBy(xpath = "//android.widget.FrameLayout//android.widget.TextView[@resource-id='com.ithinkers.agromol:id/productName']")
     private List<MobileElement> goods;
 
+    public boolean checkLeftMenuButton(){
+        return waitElement(leftBigHandle, WAIT_EL);
+    }
+
     public HomePage clickLeftMenuButton(){
         waitElement(leftBigHandle, WAIT_EL);
         leftBigHandle.click();
@@ -34,6 +36,10 @@ public class HomePage extends BasePage{
         waitElement(searchButton, WAIT_EL);
         searchButton.click();
         return this;
+    }
+
+    public boolean checkSearchButton(){
+        return waitElement(searchButton, WAIT_EL);
     }
 
     public HomePage sendKeysToSearchField(String text){

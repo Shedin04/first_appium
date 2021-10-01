@@ -2,9 +2,10 @@ import driver.DriverManager;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
-import pages.BasePage;
+import org.testng.asserts.SoftAssert;
 
 public class BaseTest {
+    protected SoftAssert softAssert = new SoftAssert();
 
     @BeforeClass
     public void createSession(){
